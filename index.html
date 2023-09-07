@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <main class="card-wrapper">
+      <h1 class="title">Interactive pricing component</h1>
+      <header class="pricing-card-header">
+        <h2>Simple, traffic-based pricing</h2>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </header>
+      <form action="" class="pricing-card" id="form">
+        <span class="pricing-card_views">100K PAGEVIEWS</span>
+        <input
+          class="pricing-card-range"
+          type="range"
+          name="range"
+          id="range"
+          min="1"
+          max="5"
+          value="3"
+        />
+        <div class="price-container">
+          <span class="price-tag">$16.00</span>
+          <span class="billing-frequency">/month</span>
+        </div>
+        <label class="frequency-toggle" for="billing-freq">
+          <span class="freq-option option-month">Monthly Billing</span>
+          <input type="checkbox" name="billing-freq" id="billing-freq" />
+
+          <div class="toggle">
+            <span class="toggle-circle"></span>
+          </div>
+          <span class="freq-option option-year">Yearly Billing</span></label
+        >
+        <div class="price-card-bottom">
+          <div class="price-features">
+            <span class="price-feature">
+              <img src="./images/icon-check.svg" atlt="icon-check" />
+              <span>Unlimited websites</span>
+            </span>
+            <span class="price-feature">
+              <img src="./images/icon-check.svg" atlt="icon-check" />
+              <span>100% data ownership</span>
+            </span>
+            <span class="price-feature">
+              <img src="./images/icon-check.svg" atlt="icon-check" />
+              <span>Email reports</span>
+            </span>
+          </div>
+          <button type="submit" class="submit-btn">Start my trial</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+    <script defer src="./scripts/script.js"></script>
+  </body>
+</html>

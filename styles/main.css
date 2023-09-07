@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+html {
+  font-family: "Manrope", sans-serif;
+}
+
+.title {
+  position: absolute;
+  top: auto;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+body {
+  min-height: 100vh;
+  padding: 10rem 2.4rem 8.6rem;
+  display: grid;
+  place-items: start center;
+  background: hsl(230, 100%, 99%);
+  background: url("../images/bg-pattern.svg"), #f9faff;
+  background-repeat: no-repeat;
+  background-size: auto 400px;
+}
+.card-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 6rem;
+  width: 100%;
+}
+.pricing-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.pricing-card-header::before {
+  position: absolute;
+  content: "";
+  background: url("../images/pattern-circles.svg") no-repeat center;
+  width: 100%;
+  height: 300%;
+  transform: translate(0, -33%);
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.pricing-card-header h2 {
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2.7rem;
+  text-align: center;
+  color: #293356;
+}
+.pricing-card-header p {
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+  text-align: center;
+  color: #848ead;
+  max-width: 17rem;
+}
+form.pricing-card {
+  background: white;
+  width: 100%;
+  max-width: 54rem;
+  display: grid;
+  box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
+  border-radius: 0.8rem;
+  padding: 3.4rem 0;
+  gap: 3.4rem;
+  justify-items: center;
+}
+.pricing-card_views {
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  letter-spacing: 0.17142rem;
+  text-transform: uppercase;
+  color: #848ead;
+}
+.pricing-card-range {
+  margin: 0.7rem 0 0 0.6rem;
+  max-width: 85%;
+}
+
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  outline: none;
+  border: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/* styling the slider */
+form.pricing-card {
+  --thumb-dimensions: 4rem;
+  --thumb-br: 50%;
+  --thumb-bg: #10d8c4;
+  --thumb-hover-bg: #7aeadf;
+  --thumb-active-bg: #24aea1;
+  --thumb-bs: 0px 15px 30px rgba(0, 255, 231, 0.6);
+}
+input[type="range"]::-webkit-slider-thumb {
+  margin-top: -1.4rem;
+  height: var(--thumb-dimensions);
+  width: var(--thumb-dimensions);
+  border-radius: var(--thumb-br);
+  cursor: pointer;
+  background: url("../images/icon-slider.svg") center no-repeat, var(--thumb-bg);
+  box-shadow: var(--thumb-bs);
+  transition: background 250ms;
+}
+input[type="range"]:hover::-webkit-slider-thumb {
+  background-color: var(--thumb-hover-bg);
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  background-color: var(--thumb-active-bg);
+}
+/* slide bar */
+form.pricing-card {
+  --track-h: 0.8rem;
+  --track-bg: #ecf0fb;
+  --track-br: 0.5rem;
+  --left: 50;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: var(--track-h);
+  cursor: pointer;
+  background: var(--track-bg);
+  border-radius: var(--track-br);
+  background-image: linear-gradient(
+    to right,
+    #a4f3eb calc(var(--left) * 1%),
+    transparent 0%
+  );
+}
+.price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.price-tag {
+  font-weight: 800;
+  font-size: 3.2rem;
+  line-height: 4.4rem;
+  letter-spacing: -0.08rem;
+  color: #293356;
+}
+.billing-frequency {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: #848ead;
+}
+/* custom toggle */
+#billing-freq {
+  display: none;
+}
+/* label */
+.frequency-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  transform: translateX(-0.6rem);
+  margin-bottom: 0.4rem;
+}
+/* radio taggle button */
+.toggle {
+  width: 4.4rem;
+  height: 2.2rem;
+  border-radius: 1.5rem;
+  padding: 0.4rem;
+  background: #cfd8ef;
+  transition: background 250ms ease-in-out;
+}
+.toggle-circle {
+  display: block;
+  height: 1.4rem;
+  width: 1.4rem;
+  background: white;
+  border-radius: 50%;
+  transform: translateX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+#billing-freq:checked ~ .toggle > .toggle-circle {
+  transform: translateX(2.2rem);
+}
+.toggle-circle:hover > .toggle,
+#billing-freq:checked ~ .toggle {
+  background: #7aeadf;
+}
+.freq-option {
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #848ead;
+  position: relative;
+}
+
+/* features */
+.price-card-bottom {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 3.4rem;
+  padding: 2.4rem 0 0;
+  border-top: 1px solid #ecf0fb;
+}
+.price-features {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+.price-feature {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #848ead;
+}
+
+.submit-btn {
+  width: max-content;
+  padding: 1.2rem 4.6rem;
+  border-radius: 2rem;
+  background: #293356;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #becdff;
+  transition: color 250ms ease-in-out;
+}
+.submit-btn:hover {
+  color: white;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-size: contain;
+    padding-top: 10.4rem;
+  }
+  .card-wrapper {
+    gap: 9.1rem;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .pricing-card-header {
+    gap: 1.2rem;
+  }
+  .pricing-card-header h2 {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+  }
+  .pricing-card-header p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    max-width: none;
+  }
+  form.pricing-card {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: max-content;
+    padding: 4rem 0;
+    align-items: center;
+    gap: 4rem;
+  }
+  .pricing-card__views {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    letter-spacing: 0.2rem;
+  }
+  .pricing-card-range {
+    margin: 0 0 1.6rem;
+    grid-row: 2/3;
+    grid-column: 1/3;
+    max-width: 82%;
+  }
+  .price-container {
+    justify-self: start;
+  }
+  .price-tag {
+    font-size: 4rem;
+    line-height: 5.5rem;
+    letter-spacing: -0.1rem;
+  }
+  .billing-frequency {
+    font-size: 1.6;
+    line-height: 2.2rem;
+  }
+  .frequency-toggle {
+    grid-column: 1/3;
+    transform: translateX(0);
+    margin-bottom: 0;
+  }
+  .option-year::after {
+    content: "-25% discount";
+  }
+  .price-card-bottom {
+    grid-column: 1/3;
+    flex-flow: column nowrap;
+    padding: 3.2rem 4.4rem 0 4.8rem;
+    justify-content: space-between;
+  }
+  .submit-btn {
+    grid-column: 1/3;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .price-features {
+    grid-column: 1/2;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .option-year::after {
+    content: "-25%";
+    position: absolute;
+    width: max-content;
+    left: 100%;
+    top: 50%;
+    transform: translate(0.55rem, -50%);
+    padding: 0.2rem 0.85rem 0.3rem 0.75rem;
+    background: #feede8;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    border-radius: 0.9rem;
+    color: #ff8d68;
+  }
+}
